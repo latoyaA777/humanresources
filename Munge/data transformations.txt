@@ -1,0 +1,87 @@
+
+
+-----------------------------------------------------------
+step 1
+-----------------------------------------------------------
+CREATE EXTERNAL TABLE sales_genre
+
+(Genre string, Global_Sales int, Critic_Score int);
+
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+
+STORED AS TEXT FILE LOCATION  '/sales'
+
+TABLEPROPERTIES("skip.header.line.count"="1");
+=execute=
+
+-----------------------------------------------------------
+step 2
+-----------------------------------------------------------
+
+SELECT * FROM sales_genre LIMIT 10;
+
+
+=execute=
+
+-----------------------------------------------------------
+step 4
+-----------------------------------------------------------
+INSERT OVERWRITE TABLE sales_genre
+SELECT Genre, Global_SaleS, Critic_Score FROM sales_genre;
+
+=execute=
+
+-----------------------------------------------------------
+step 5
+-----------------------------------------------------------
+
+SELECT * FROM sales_genre LIMIT 10;
+
+
+=execute=
+
+-----------------------------------------------------------
+step 6
+-----------------------------------------------------------
+INSERT OVERWRITE TABLE sales_genre
+SELECT Genre, Global_Sales ROUND(2), Critic_Score FROM sales_genre;
+
+
+-----------------------------------------------------------
+step 7
+-----------------------------------------------------------
+INSERT OVERWRITE TABLE sales_genre
+SELECT *
+FROM sales_genre
+WHERE Critic_Score >0;
+
+=execute=
+
+-----------------------------------------------------------
+step 8
+-----------------------------------------------------------
+
+SELECT * FROM sales_genre LIMIT 10;
+
+
+=execute=
+
+-----------------------------------------------------------
+step 9
+-----------------------------------------------------------
+INSERT OVERWRITE TABLE sales_genre
+SELECT *
+FROM sales_genre
+ORDER BY Critic_Score DESC;
+
+=execute=
+
+-----------------------------------------------------------
+step 10
+-----------------------------------------------------------
+
+SELECT * FROM sales_genre LIMIT 10;
+
+
+=execute=
