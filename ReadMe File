@@ -1,0 +1,13 @@
+-Problem being analyzed-
+1 - Distribution of monthly income for salespeople without attrition and salespeople with attrition
+2 - The amount of salespeople with attrition and salespeople without attrition
+
+Insight
+The distribution of monthly income for non- attrition sales people was skewed to the left and had a more even distribution that those with attrition. There was one outlier for this group with a data point at 77 and the next nearest was 39, This is 38 points from the next highest data point. 
+
+The distribution for those with attrition was less evenly distributed. There was also a dip in the income range of $4,000. The data was also skewed to the left.
+There was a higher count associated with the group in the non-attrition category than those with attrition.  
+
+Directory structure
+Project is broken into phases
+
