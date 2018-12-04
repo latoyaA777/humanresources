@@ -1,0 +1,74 @@
+
+
+
+-----------------------------------------------------------
+step 1
+
+-----------------------------------------------------------
+
+SELECT AVG(Critic_Score) AS sports_critic_scofre
+FROM sales_genre;
+WHERE Genre LIKE "%Sports%"
+
+-----------------------------------------------------------
+step 2
+-----------------------------------------------------------
+
+
+SELECT AVG(Critic_Score) AS shooter_critic_score
+FROM sales_genre;
+WHERE Genre LIKE "%Shooter%"
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Create 3 statistics tables (average, min, max) for the global_sales for:  all games, Sports games, Shooter games. 
+
+SELECT AVG(Age) AS average_age, MIN(Age) AS min_age, MAX(Age) AS max_age
+FROM survey_consequences;
+
+
+
+
+-----------------------------------------------------
+SELECT AVG(global_sales) AS average_global_sales, MIN(global_sales) AS min_global_sales, MAX(global_sales) AS max_global_sales
+FROM sales_genre;
+
+SELECT AVG(global_sales) AS average_global_sales, MIN(global_sales) AS min_global_sales, MAX(global_sales) AS max_global_sales
+FROM sales_genre
+WHERE Genre LIKE "%Sports%";
+
+SELECT AVG(global_sales) AS average__global_sales, MIN(global_sales) AS min__global_sales, MAX(global_sales) AS max_global_sales
+FROM sales_genre
+WHERE Genre LIKE "%Shooter%";
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+3)  Create 2 tables containing the global_sales and the count of games with that global_sales for: Sports games and Shooter games.  For each table, label the columns as: “global_sales” and “count”.
+
+-----------------------------------------------------------------------
+
+
+SELECT COUNT(global_sales) AS global_sales
+FROM sales_genre
+WHERE Genre LIKE "%Sports%" AND Genre LIKE "%Shooter%";
+
+SELECT COUNT(genre) AS count
+FROM sales_genre
+WHERE Genre LIKE "%Sports%" AND Genre LIKE "%Shooter%";
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
